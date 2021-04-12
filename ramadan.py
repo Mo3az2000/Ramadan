@@ -9,7 +9,10 @@ with open('contacts.csv','r',encoding="utf8") as csv_file:
     first = True
 
     for line in flist:
-        messeg ="كل سنة وانت طيب يا "+ line[0].split()[0]+" ❤ ورمضان كريم عليك 😍"
+        name = line[0].split()[0]
+        if name == "عبد" :
+            name = name + line[0].split()[1]
+        messeg ="كل سنة وانت طيب يا "+ name +" ❤ ورمضان كريم عليك 😍"
         Pnumber = line[30]
         Pnumber = Pnumber.replace(" ","")
         if(len(Pnumber) == 11):
